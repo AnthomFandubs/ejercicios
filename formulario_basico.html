@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles6.css">
+    <title>Formulario Básico</title>
+    <script>
+    function validarFormulario(event) {
+        event.preventDefault(); // Evita que se envíe
+
+        const password = document.getElementById('contraseña').value;
+        const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,12}$/;
+
+        if (!regex.test(password)) {
+            alert("La contraseña debe tener entre 8 y 12 caracteres, una mayúscula, un número y un símbolo.");
+            return false;
+        }
+
+        // Si todo está bien, redirige
+        window.location.href = "gracias.html";
+        return true;
+    }
+    </script>
+</head>
+<body>
+    <h1>Formulario Básico</h1>
+    <form onsubmit="validarFormulario(event)">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" title="Escribe tu nombre completo" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" title="Introduce tu correo electrónico" required><br><br>
+        <small>
+            ¿No tienes inicio de sesión? 
+            <a href="formulario_registro.html">Regístrate aquí</a>
+        </small><br><br>
+
+        <label for="contraseña">Contraseña:</label><br>
+        <input type="password" id="contraseña" name="contraseña" placeholder="8-12 caracteres" title="Debe tener una mayúscula, número y símbolo" minlength="8" maxlength="12" required><br><br>
+
+        <label for="genero">Género:</label><br>
+        <label for="masculino">Masculino:</label><br>
+        <input type="radio" id="masculino" name="genero" value="masculino" required><br><br>
+
+        <label for="femenino">Femenino:</label><br>
+        <input type="radio" id="femenino" name="genero" value="femenino"><br><br>
+
+
+        <label for="deportes">Deportes:</label><br>
+        <input type="checkbox" id="deportes" name="intereses[]" value="deportes"><br><br>
+
+        <label for="musica">Música:</label><br>
+        <input type="checkbox" id="musica" name="intereses[]" value="musica"><br><br>
+
+        <label for="arte">Arte:</label><br>
+        <input type="checkbox" id="arte" name="intereses[]" value="arte"><br><br>
+
+
+        <label for="pais">País:</label><br>
+        <select id="pais" name="pais" required title="Selecciona tu país">
+            <option value="">-- Selecciona --</option>
+            <option value="mexico">México</option>
+            <option value="argentina">Argentina</option>
+            <option value="colombia">Colombia</option>
+            <!-- Puedes añadir más países aquí -->
+        </select><br><br>
+
+        <label for="comentarios">Comentarios:</label><br>
+        <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Escribe tus comentarios (opcional)" title="Puedes dejar comentarios si lo deseas"></textarea><br><br>
+
+        <label for="fecha">Fecha de Nacimiento:</label><br>
+        <input type="date" id="fecha" name="fecha" title="Selecciona tu fecha de nacimiento" required><br><br>
+
+        <label for="telefono">Teléfono:</label><br>
+        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 5551234567" title="Introduce tu número telefónico" required><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

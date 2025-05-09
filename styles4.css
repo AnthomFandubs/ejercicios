@@ -1,0 +1,80 @@
+body {
+  background-color: #1e1e1e;
+  font-family: Arial, sans-serif;
+  color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.contenedor {
+  text-align: center;
+  background-color: #992323; /* rojo vino */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #FFD700; /* dorado */
+}
+
+#contador {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+#botonClic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  font-size: 16px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#botonClic:hover:not(:disabled) {
+  background-color: #c0392b;
+}
+
+#botonClic:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.timers button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.timers button:hover {
+  background-color: #2980b9;
+}
+
+#mensajeFinal {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #2ecc71;
+  font-size: 18px;
+}
+
+#tiempoRestante {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #f1c40f;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles6.css">
+    <title>Formulario Encuesta</title>
+</head>
+<body>
+    <h1>Encuesta de Satisfacción</h1>
+    <form action="/encuesta.php" method="POST">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" title="Escribe tu nombre" required><br><br>
+
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" title="Introduce tu correo" required><br><br>
+
+        <label for="satisfaccion">¿Qué tan satisfecho estás con nuestro servicio?</label><br>
+        <select id="satisfaccion" name="satisfaccion" required title="Selecciona tu nivel de satisfacción">
+            <option value="">-- Selecciona --</option>
+            <option value="muy_satisfecho">Muy satisfecho</option>
+            <option value="satisfecho">Satisfecho</option>
+            <option value="neutral">Neutral</option>
+            <option value="insatisfecho">Insatisfecho</option>
+            <option value="muy_insatisfecho">Muy insatisfecho</option>
+        </select><br><br>
+
+        <label for="mejora">¿Qué podemos mejorar?</label><br>
+        <textarea id="mejora" name="mejora" rows="4" cols="50" placeholder="Tu opinión..." title="Cuéntanos tu opinión (opcional)"></textarea><br><br>
+
+        <label>¿Recomendarías nuestros servicios?</label><br>
+        <input type="radio" id="si" name="recomienda" value="si" required>
+        <label for="si">Sí</label><br>
+        <input type="radio" id="no" name="recomienda" value="no">
+        <label for="no">No</label><br><br>
+
+        <input type="submit" value="Enviar encuesta">
+    </form>
+</body>
+</html>
